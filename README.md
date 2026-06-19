@@ -59,26 +59,6 @@ npx serve public -l 3000
 
 Then open [http://localhost:3000](http://localhost:3000)
 
-## 🚀 Deploy
-
-### Vercel
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy (from project root)
-vercel --prod
-```
-
-Set the **Output Directory** to `public` in Vercel settings.
-
-### GitHub Pages
-
-1. Push to GitHub
-2. Go to Settings → Pages
-3. Set source to `main` branch, folder `/public`
-4. Your site will be live at `https://<username>.github.io/<repo>/`
 
 ## 📂 Project Structure
 
