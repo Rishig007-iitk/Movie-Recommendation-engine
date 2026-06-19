@@ -1,0 +1,11 @@
+{
+    "name": "cinematch-movie-recommender",
+    "version": "1.0.0",
+    "description": "AI-powered movie recommendation system using content-based filtering",
+    "scripts": {
+        "build": "python3 build_data.py",
+        "start": "npx serve public -l 3000"
+    },
+    "keywords": ["movie", "recommendation", "machine-learning", "cosine-similarity"],
+    "license": "MIT"
+}

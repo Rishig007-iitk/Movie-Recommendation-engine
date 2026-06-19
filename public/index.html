@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch — AI Movie Recommendations</title>
+    <meta name="description" content="Discover your next favorite movie with AI-powered content-based recommendations. Search any movie and find similar films instantly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+</head>
+<body>
+    <!-- Ambient background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Loading screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-film">
+                <div class="film-strip">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <p class="loader-text">Loading movie database...</p>
+            <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main id="app" class="app hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="logo" id="logo-btn">
+                    <span class="logo-icon">🎬</span>
+                    <h1 class="logo-text">Cine<span class="logo-accent">Match</span></h1>
+                </div>
+                <p class="tagline">AI-Powered Movie Recommendations</p>
+            </div>
+        </header>
+
+        <!-- Hero / Search -->
+        <section class="hero" id="hero-section">
+            <div class="container">
+                <h2 class="hero-title">
+                    Find Your Next<br>
+                    <span class="gradient-text">Favorite Movie</span>
+                </h2>
+                <p class="hero-subtitle">Search from 4,800+ movies and discover similar films powered by content-based AI</p>
+                
+                <div class="search-wrapper">
+                    <div class="search-container" id="search-container">
+                        <div class="search-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </div>
+                        <input 
+                            type="text" 
+                            id="search-input" 
+                            class="search-input" 
+                            placeholder="Search for a movie... e.g. Inception, Avatar, The Dark Knight"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                        <button id="clear-btn" class="clear-btn hidden" aria-label="Clear search">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div id="autocomplete-list" class="autocomplete-list hidden"></div>
+                    </div>
+                </div>
+
+                <!-- Popular picks -->
+                <div class="popular-picks" id="popular-picks">
+                    <span class="picks-label">Popular:</span>
+                    <div class="picks-list" id="picks-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="results-section hidden" id="results-section">
+            <div class="container">
+                <div class="results-header">
+                    <h3 class="results-title">
+                        Because you liked
+                        <span class="selected-movie" id="selected-movie-name"></span>
+                    </h3>
+                    <p class="results-subtitle">Here are movies you might enjoy</p>
+                </div>
+
+                <!-- Selected movie card -->
+                <div class="selected-card-wrapper" id="selected-card-wrapper">
+                </div>
+
+                <div class="divider">
+                    <span class="divider-text">Recommended For You</span>
+                </div>
+
+                <div class="results-grid" id="results-grid">
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>Built with ❤️ using Content-Based Filtering &amp; Cosine Similarity</p>
+                <p class="footer-sub">Data from TMDB 5000 Movie Dataset</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
