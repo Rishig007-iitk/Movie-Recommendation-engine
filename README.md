@@ -6,7 +6,7 @@ A stunning, AI-powered movie recommendation website built using **Content-Based 
 
 ## 🚀 Live Demo
 
-Deploy to Vercel or GitHub Pages in minutes!
+https://movierecommendation-zeta.vercel.app
 
 ## ✨ Features
 
